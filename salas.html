@@ -4,7 +4,7 @@
 <head>
 
 	<!--Meta -->
-	<title>Generador de códigos QRCode con Javascript</title>
+	<title>Selector de Salas</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 
@@ -19,10 +19,41 @@
 
 <body>
 	<div style="padding-top:1rem">
-		<h1>Generador de QR</h1>
+		<h1>Selector de Salas</h1>
 		<div class="ui divider"></div>
-		<input id="text" type="text" value="http://tupaginaweb.com" style="width:50%" /><br />
-		<a id="generateQrCodeButton" class="ui button">Generar código QR</a>
+		<div>
+
+			<input id="opcion" type="text" value="test1" style="width:50%" /><br />
+			<h2 id="title2">Hola</h2>
+			<!-- <input type="text" id="opcion" value="a" > -->
+
+			<p id="p">selectedIndex: 0</p>
+
+			<select id="select">
+				<option selected>Option A</option>
+				<option>Option B</option>
+				<option>Option C</option>
+				<option>Option D</option>
+				<option>Option E</option>
+			</select>
+
+
+		</div>
+		<a id="generateQrCodeButton" class="ui button">Generate QR Code</a>
+		<div>
+			28-01
+			https://bbva-facilitybooking.appspot.com/contactless?id=R10325
+			<br>
+			28-02
+			https://bbva-facilitybooking.appspot.com/contactless?id=R10324
+			<br>
+			28-03
+			https://bbva-facilitybooking.appspot.com/contactless?id=R10323
+			<br>
+			28-04
+			https://bbva-facilitybooking.appspot.com/contactless?id=R10322
+			<br>
+		</div>
 	</div>
 	<div style="
 		background: #FFF; 
@@ -39,16 +70,27 @@
 	</div>
 
 	<script type="text/javascript">
+		var selectElem = document.getElementById('select')
+var pElem = document.getElementById('p')
+// When a new <option> is selected
+		selectElem.addEventListener('change', function() {
+			var index = selectElem.selectedIndex;
+			// Add that data to the <p>
+			pElem.innerHTML = 'selectedIndex: ' + index;
+		})
+
+
 		var qrcode = new QRCode(document.getElementById("qrcode"), {
 			width: 328,
 			height: 328
 		});
 
 		function makeCode() {
-			var elText = document.getElementById("text");
+			var elText = document.getElementById("opcion");
+			console.log(elText.value);
 
 			if (!elText.value) {
-				alert("Input a text");
+				console.log("Input a text");
 				elText.focus();
 				return;
 			}
