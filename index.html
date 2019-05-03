@@ -9,8 +9,8 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 
 	<!--Style -->
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="style2.css">
+	<link rel="stylesheet" href="styleQR.css">
+	<!-- 	<link rel="stylesheet" href="styleQR2.css"> -->
 
 	<!--Scripts -->
 	<script type="text/javascript" src="jquery.min.js"></script>
@@ -18,30 +18,47 @@
 </head>
 
 <body>
-	<div style="padding-top:1rem">
-		<h1>Generador de QR</h1>
-		<div class="ui divider"></div>
-		<input id="text" type="text" value="http://tupaginaweb.com" style="width:50%" /><br />
-		<a id="generateQrCodeButton" class="ui button">Generar código QR</a>
-	</div>
-	<div style="
-		background: #FFF; 
-		border: 1px solid #AAA; 
-		border-radius: 1rem; 
-		padding: 2rem; 
-		width: 384px; 
-		height: 384px; 
-		margin: 0 auto;">
 
-		<div id="qrcode" style="width:328px; height:328px; margin-top:5px;">
-			<canvas width="328" height="328" style="display:none">
+	<!-- Sidenav -->
+	<div class="sidenav">
+		<h1>Páginas de Daniel</h1><br>
+		<a href="../index.html">Inicio</a>
+		<a href="../ColoresBBVA/index.html">Lista de Colores</a>
+		<a href="https://www.w3schools.com/colors/colors_picker.asp">Color Picker</a>
+	</div>
+
+	<!-- Content -->
+	<div class="content">
+		<div style="padding-top:1rem">
+			<h1>Generador de QR</h1>
+			<div class="ui divider"></div>
+			<input id="text" type="text" value="http://tupaginaweb.com" style="width:50%" /> <br />
+			<br>
+			<button class="button">
+				Generar código QR
+			</button>
+
 		</div>
+		<div style="
+							background: #FFF; 
+							border: 1px solid #AAA; 
+							border-radius: 1rem; 
+							padding: 1.5rem; 
+							width: 348px; 
+							height: 348px; 
+							margin: 0;">
+
+			<div id="qrcode">
+				<canvas width="348" height="348" style="display:none">
+			</div>
+		</div>
+
 	</div>
 
 	<script type="text/javascript">
 		var qrcode = new QRCode(document.getElementById("qrcode"), {
-			width: 328,
-			height: 328
+			width: 348,
+			height: 348
 		});
 
 		function makeCode() {

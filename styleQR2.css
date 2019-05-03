@@ -1,0 +1,25 @@
+
+input[type=text],input[type=email],input[type=search],input[type=password] {
+  -webkit-appearance: none;
+  -moz-appearance: none
+}
+.ui.divider {
+  margin: 1rem 0;
+  line-height: 1;
+  height: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: rgba(195, 184, 199, 0.85);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 1rem
+}
+
+.ui.divider:not(.vertical):not(.horizontal) {
+  border-top: 1px solid rgba(34,36,38,.15);
+  border-bottom: 1px solid rgba(255,255,255,.1)
+}
